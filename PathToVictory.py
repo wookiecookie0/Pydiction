@@ -7,7 +7,7 @@ import os
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('nfl_games_2013.csv', parse_dates=['date'], infer_datetime_format=True)
+df = pd.read_csv('nfl_games_2013.csv', index_col=['date'], parse_dates=['date'], infer_datetime_format=True)
 first = df.ix[0,0]
 last = first + pd.offsets.Day(7)
 mask = ((df['date'] >= first) & (df['date']<last))
