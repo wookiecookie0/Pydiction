@@ -28,3 +28,7 @@ for i in range(17):
     first = last
     last = first + pd.offsets.Day(7)
 print(df.Week)
+#mask = Week_1.team1 == 'WSH'
+#Week_1.team1[mask].index[0]
+#is the same as
+#Week_1.team1[Week_1.team1 == 'WSH'].index[0]
