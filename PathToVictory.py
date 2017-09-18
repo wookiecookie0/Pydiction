@@ -22,12 +22,15 @@ year = str(df.season[0])
 for i in range(17):
     mask = ((df['date'] >= first) & (df['date'] < last))
     df.Week[mask] = i+1
-    print(df[mask])
+    #print(df[mask])
     #new_df=pd.DataFrame(test,)
     #test.to_csv((year+'/'+'Week ' + str(i+1) + '.csv'))
     first = last
     last = first + pd.offsets.Day(7)
-print(df.Week)
+#print(df.Week)
+df['winner'] = df.team1
+df['prob'] = abs(df.elo_prob1 - .5)
+df.winner.where(df.result1 > 0 , other = df.team2, inplace = True)
 #mask = Week_1.team1 == 'WSH'
 #Week_1.team1[mask].index[0]
 #is the same as
