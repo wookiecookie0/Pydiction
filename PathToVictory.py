@@ -57,7 +57,7 @@ while y < 2014:
         prob_cutoff = round((prob_cutoff - .01), 5)
         t = 0
         prob_mask = df.prob >= prob_cutoff
-        while t < 10000:
+        while t < 20000:
             picks = []
             dfpicks = pd.DataFrame(np.zeros(shape=(1, 17)),
                                    columns=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
